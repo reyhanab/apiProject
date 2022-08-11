@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
       const {id,username,email} = this
       return {id,username,email}
     }
-    validatePassword(password){
-      return bcrypt.compareSync(password,this.hashedPassword.toString())
+    validatePassword(password) {
+      return bcrypt.compareSync(password, this.hashedPassword.toString());
     }
     static getCurrentUserById(id){
       return User.scope('currentUser').findByPk(id)
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
 
     static async login ({credential, password}){
       const {Op} = require ('sequelize');
-      const user = await user.scope('loginUser').findOne({
+      const user = await User.scope('loginUser').findOne({
         where:{
           [Op.or]:{
             username:credential,
@@ -29,8 +29,11 @@ module.exports = (sequelize, DataTypes) => {
           }
         }
       });
+      console.log('login')
       if (user && user.validatePassword(password)){
         return await User.scope('currentUser').findByPk(user.id)
+        // console.log(await User.scope('currentUser').findByPk(user.id))
+
       }
     }
 
