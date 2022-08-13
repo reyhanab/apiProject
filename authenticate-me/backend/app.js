@@ -16,6 +16,7 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(express.json());
 
+console.log("fff")
 
 if (!isProduction) {
     // enable cors only in development
