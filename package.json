@@ -1,0 +1,25 @@
+{
+  "name": "practice-for-sprint-12-authenticate-me-long-practice-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "npm --prefix authenticate-me/backend install backend",
+    "dev:backend": "npm install --prefix authenticate-me/backend start",
+    "sequelize": "npm run --prefix authenticate-me/backend sequelize",
+    "sequelize-cli": "npm run --prefix authenticate-me/backend sequelize-cli",
+    "start": "npm start --prefix authenticate-me/backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reyhanab/apiProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reyhanab/apiProject/issues"
+  },
+  "homepage": "https://github.com/reyhanab/apiProject#readme"
+}
